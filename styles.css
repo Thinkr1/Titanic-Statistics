@@ -1,3 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=League+Spartan:wght@400;600&family=M+PLUS+Rounded+1c:wght@800&display=swap");
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+  /* background-color: #1D1E22 / #111111 */
+}
+
+h1,
+h3 {
+  font-family: "Exo 2", sans-serif;
+}
+
+h1 {
+  color: #efefef; /*#cccccc*/
+  text-align: center;
+}
+
+#head {
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: rgb(26, 98, 150); /*#355E8C*/
+}
+
+#panel {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgb(128, 128, 128);
+  position: relative;
+  top: -30px;
+  background-color: #eee; /*#222222*/
+  padding: 20px;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
 }
