@@ -15,8 +15,8 @@
 //   });
 
 function round(value, precision) {
-    var multiplier = Math.pow(10, precision || 0);
-    return Math.round(value * multiplier) / multiplier;
+  var multiplier = Math.pow(10, precision || 0);
+  return Math.round(value * multiplier) / multiplier;
 }
 
 fetch("./titanic.json")
@@ -24,10 +24,21 @@ fetch("./titanic.json")
   .then((data) => {
     const classes = [1, 2, 3];
     classes.forEach((classNum) => {
-      const filteredPassengers = data.filter((passenger) => passenger.Class === classNum);
-      const survivedInClass = filteredPassengers.filter((passenger) => passenger.Survived === 1).length;
-      const classPercentage = round(((survivedInClass / filteredPassengers.length) * 100), 1);
-      document.getElementById(`class${classNum}p`).innerHTML = `${classPercentage}%`;
-      document.getElementById(`class${classNum}t`).innerHTML = `Survived in class #${classNum}`;
+      const filteredPassengers = data.filter(
+        (passenger) => passenger.Class === classNum
+      );
+      const survivedInClass = filteredPassengers.filter(
+        (passenger) => passenger.Survived === 1
+      ).length;
+      const classPercentage = round(
+        (survivedInClass / filteredPassengers.length) * 100,
+        1
+      );
+      document.getElementById(
+        `class${classNum}p`
+      ).innerHTML = `${classPercentage}%`;
+      document.getElementById(
+        `class${classNum}t`
+      ).innerHTML = `Survived in class #${classNum}`;
     });
   });
