@@ -22,6 +22,9 @@ function round(value, precision) {
 fetch("./titanic.json")
   .then((response) => response.json())
   .then((data) => {
+
+    // SURVIVED
+
     const classes = [1, 2, 3];
     classes.forEach((classNum) => {
       const filteredPassengers = data.filter(
@@ -40,6 +43,8 @@ fetch("./titanic.json")
       document.getElementById(
         `class${classNum}t`
       ).innerHTML = `Survived in class #${classNum}`;
+
+      // FARES
 
       const fares = filteredPassengers.map((passenger) => passenger.Fare);
       const averageFare = round(
