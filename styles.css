@@ -51,9 +51,16 @@ h3 {
 
 section {
   width: 33.333%;
-  border-right: 1px solid #ccc;
   text-align: center;
   padding: 10px;
+}
+
+.sect1, .sect2 {
+    border-right: 1px solid #ccc;
+}
+
+.sect3 {
+    border-left: 1px solid #ccc;
 }
 
 #class1p, #class2p, #class3p {
@@ -69,5 +76,5 @@ section {
     margin-bottom: 5px;
     font-family: "League Spartan", sans-serif;
     text-align: center;
+    color: rgb(90, 90, 90);
 }
-
