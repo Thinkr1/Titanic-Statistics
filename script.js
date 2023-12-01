@@ -40,5 +40,17 @@ fetch("./titanic.json")
       document.getElementById(
         `class${classNum}t`
       ).innerHTML = `Survived in class #${classNum}`;
+
+      const fares = filteredPassengers.map((passenger) => passenger.Fare);
+      const averageFare = round(
+        fares.reduce((a, b) => a + b, 0) / fares.length,
+        2
+      );
+      document.getElementById(
+        `class${classNum}f`
+      ).innerHTML = `${averageFare}`;
+      document.getElementById(
+        `class${classNum}d`
+      ).innerHTML = `Average fare in class #${classNum}`;
     });
   });
