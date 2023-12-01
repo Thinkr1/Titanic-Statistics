@@ -11,13 +11,18 @@ body {
 }
 
 h1,
-h3 {
+h3, h4 {
   font-family: "Exo 2", sans-serif;
+  margin-bottom: 10px;
 }
 
 h1 {
   color: #efefef; /*#cccccc*/
   text-align: center;
+}
+
+#byclass {
+    text-align: left;
 }
 
 #head {
@@ -39,11 +44,9 @@ h1 {
 }
 
 section {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
+    padding: 10px;
+}
+
+#class1 {
+    
 }
