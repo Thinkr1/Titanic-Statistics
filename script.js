@@ -51,7 +51,7 @@ fetch("./titanic.json")
         fares.reduce((a, b) => a + b, 0) / fares.length,
         2
       );
-      const todayPounds = round((averageFare * 114.29), 1);
+      const todayPounds = round((averageFare * 114.29498561), 1);
       document.getElementById(
         `class${classNum}f`
       ).innerHTML = `${averageFare}£ (${todayPounds}£ today)`;
