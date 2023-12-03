@@ -65,7 +65,10 @@ section {
 #class3p,
 #class1f,
 #class2f,
-#class3f {
+#class3f,
+#class1a,
+#class2a,
+#class3a {
   display: inline-block;
   font-family: "M Plus Rounded 1c", sans-serif;
   margin-bottom: 5px;
@@ -76,7 +79,12 @@ section {
 #class1f,
 #class2f,
 #class3f {
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+#class1f {
+  margin-top: 4px;
 }
 
 #class1p,
@@ -85,12 +93,21 @@ section {
     font-size: 24px;
 }
 
+#class1a,
+#class2a,
+#class3a {
+  font-size: 24px;
+}
+
 #class1t,
 #class2t,
 #class3t,
 #class1d,
 #class2d,
-#class3d {
+#class3d,
+#class1de,
+#class2de,
+#class3de {
   margin-bottom: 5px;
   font-family: "League Spartan", sans-serif;
   text-align: center;
