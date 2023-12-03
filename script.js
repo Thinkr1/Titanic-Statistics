@@ -19,19 +19,22 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
-fetch("./titanic.json")
+fetch("./json/titanic.json")
   .then((response) => response.json())
   .then((data) => {
 
-    // SURVIVED
+    // PER CLASS
 
     const classes = [1, 2, 3];
     classes.forEach((classNum) => {
       const filteredPassengers = data.filter(
-        (passenger) => passenger.Class === classNum
+        (passenger) => passenger.class === classNum
       );
+
+      // SURVIVED
+
       const survivedInClass = filteredPassengers.filter(
-        (passenger) => passenger.Survived === 1
+        (passenger) => passenger.survived === 1
       ).length;
       const classPercentage = round(
         (survivedInClass / filteredPassengers.length) * 100,
@@ -46,7 +49,7 @@ fetch("./titanic.json")
 
       // FARES
 
-      const fares = filteredPassengers.map((passenger) => passenger.Fare);
+      const fares = filteredPassengers.map((passenger) => passenger.fare);
       const averageFare = round(
         fares.reduce((a, b) => a + b, 0) / fares.length,
         2
@@ -58,5 +61,19 @@ fetch("./titanic.json")
       document.getElementById(
         `class${classNum}d`
       ).innerHTML = `Average fare in class #${classNum}`;
+
+      // AGE
+
+      const age = filteredPassengers.map((passenger) => passenger.age);
+      const averageAge = round(
+        age.reduce((a, b) => a + b, 0) / age.length,
+        2
+      );
+      document.getElementById(
+        `class${classNum}a`
+      ).innerHTML = `${averageAge}`;
+      document.getElementById(
+        `class${classNum}de`
+      ).innerHTML = `Average age in class #${classNum}`;
     });
   });
