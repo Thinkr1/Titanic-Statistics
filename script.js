@@ -19,10 +19,9 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
-fetch("./json/titanic.json")
+fetch("./JSON/titanic.json")
   .then((response) => response.json())
   .then((data) => {
-
     // PER CLASS
 
     const classes = [1, 2, 3];
@@ -49,12 +48,14 @@ fetch("./json/titanic.json")
 
       // FARES
 
-      const fares = filteredPassengers.map((passenger) => passenger.fare);
+      const fares = filteredPassengers
+        .map((passenger) => passenger.fare)
+        .filter((fare) => !isNaN(fare));
       const averageFare = round(
         fares.reduce((a, b) => a + b, 0) / fares.length,
         2
       );
-      const todayPounds = round((averageFare * 114.29498561), 1);
+      const todayPounds = round(averageFare * 114.29498561, 1);
       document.getElementById(
         `class${classNum}f`
       ).innerHTML = `${averageFare}£ (${todayPounds}£ today)`;
@@ -64,14 +65,11 @@ fetch("./json/titanic.json")
 
       // AGE
 
-      const age = filteredPassengers.map((passenger) => passenger.age);
-      const averageAge = round(
-        age.reduce((a, b) => a + b, 0) / age.length,
-        2
-      );
-      document.getElementById(
-        `class${classNum}a`
-      ).innerHTML = `${averageAge}`;
+      const age = filteredPassengers
+        .map((passenger) => passenger.age)
+        .filter((age) => !isNaN(age));
+      const averageAge = round(age.reduce((a, b) => a + b, 0) / age.length, 2);
+      document.getElementById(`class${classNum}a`).innerHTML = `${averageAge}`;
       document.getElementById(
         `class${classNum}de`
       ).innerHTML = `Average age in class #${classNum}`;
